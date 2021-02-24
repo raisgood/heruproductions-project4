@@ -1,5 +1,11 @@
 from django.shortcuts import render
 
 # Create your views here.
-def index(request):
-    return render(request, 'store/template.html')
+def home(request):
+    return render(request, 'store/home.html')
+
+def library(request):
+    return render(request, 'store/library.html')
+
+def contact(request):
+    return render(request, 'store/contact.html')
