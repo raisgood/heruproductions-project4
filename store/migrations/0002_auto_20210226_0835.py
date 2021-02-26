@@ -10,11 +10,19 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterField(
+        migrations.AddField(
+            model_name='library',
+            name='price',
+            field=models.DecimalField(decimal_places=2, default=5.99, max_digits=8),
+            preserve_default=False,
+        ),
+
+        migrations.AddField(
             model_name='library',
             name='director',
             field=models.CharField(max_length=200),
         ),
+        
         migrations.AlterField(
             model_name='library',
             name='title',
