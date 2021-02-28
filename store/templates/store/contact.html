@@ -1,17 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Heru Productions</title>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
-  </head>
+{% extends "base.html" %}
 
-  <body>
-  <nav>
-  <a href="{% url 'home' %}">Home</a> |
-  <a href="{% url 'library' %}">Library</a> |
-  <a href="{% url 'contact' %}">Contact</a>
-  </nav>
+{% block content %}
     <h1>Contact</h1>
-  </body>
-</html>
+    <p>Request method: {{method}}</p>
+    <p>Title(if it exists): {{title}}</p>
+    <p>Logged in as: {{request.user}}</p>
+
+  <form action="{% url 'contact' %}" method="POST">
+  {% csrf_token %}
+  <div>
+    <label>
+      Title:
+      <input type="text" name="title" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Director:
+      <input type="text" name="director" />
+    </label>
+  </div>
+    <button type="submit">Add Movie</button>
+  </form>
+{% endblock %}
+

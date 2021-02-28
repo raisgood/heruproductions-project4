@@ -15,4 +15,11 @@ def library(request):
     return render(request, 'store/library.html', context)
 
 def contact(request):
-    return render(request, 'store/contact.html')
+    data = {
+        'method': request.method,
+        'title': ''
+    }
+    if  request.method == 'POST':
+        data['title'] = request.POST.get('title')
+
+    return render(request, 'store/contact.html', data)
