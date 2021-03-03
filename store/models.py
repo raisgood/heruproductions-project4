@@ -10,3 +10,7 @@ class Library(models.Model):
     publish_date = models.DateField(default=datetime.date.today)
     price = models.DecimalField(decimal_places=2, max_digits=8)
     stock = models.IntegerField(default=0)
+
+    def buy_movie(self):
+        self.stock -= 1
+        self.save()

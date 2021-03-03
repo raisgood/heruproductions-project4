@@ -1,7 +1,7 @@
 {% load static %}
 {% load bootstrap4 %}
 {% load bootstrap_themes %}
-{% bootstrap_styles theme='simplex' type='min.css' %}
+{% bootstrap_styles theme='cyborg' type='min.css' %}
 {% block bootstrap4_title %}
 <!DOCTYPE html>
 <html>
@@ -9,20 +9,50 @@
     <title>Heru Production</title>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="{% static 'base/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'base/css/styles.css' %}" />
   </head>
 
   <body>
     {% block title %}
+    <div>
     <h1>Heru Productions</h1>
+    </div>
     {% endblock %}
     {% endblock %}
+  <div>
   <nav>
-  <a href="{% url 'home' %}">Home</a> |
-  <a href="{% url 'library' %}">Library</a> |
-  <a href="{% url 'contact' %}">Contact</a>
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a href="{% url 'home' %}">Home</a>
+  </li>
+  <li class="nav-item">
+    <a href="{% url 'library' %}">Library</a>
+  </li>
+  <li class="nav-item">
+    <a href="{% url 'contact' %}">Contact</a>
+  </li>
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade show active" id="home"></div>
+  <div class="tab-pane fade" id="profile"></div>
+  <div class="tab-pane fade" id="dropdown1"></div>
+  <div class="tab-pane fade" id="dropdown2"></div>
+</div>
   </nav>
+  </div>
+  
   <img class="header-image" src="{% static 'base/img/herulogo.jpg' %}" width="250" height="250">
+  
+  <div>
+  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-secondary">Secondary</button>
+  <button type="button" class="btn btn-success">Success</button>
+  <button type="button" class="btn btn-info">Info</button>
+  <button type="button" class="btn btn-warning">Warning</button>
+  <button type="button" class="btn btn-danger">Danger</button>
+  <button type="button" class="btn btn-link">Link</button>
+  </div>
+
   {% block bootstrap4_content %}
     {% block content %}
     {% endblock %}

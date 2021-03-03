@@ -3,3 +3,9 @@
     border: 5px ridge brown;
     margin: 10px 25px;
 }
+
+.library-container {
+    margin: 20px 60px;
+    display: flex;
+    flex-direction: column;
+}

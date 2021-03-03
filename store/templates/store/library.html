@@ -2,11 +2,18 @@
 
 {% block content %}
     <h1>Library</h1>
-    <p>There are {{count}} movies in stock. </p>
-    <ul>
+    <p>There are {{count}} movies in stock.</p>
+    <section class="library-container">
     {%for library in library %}
-    <li>{{library.title}} ({{library.director}})</li>
+    <div>
+        {{library.title}} ({{library.director}}) ({{library.writer}}) ({{library.description}}) - Stock: {{library.stock}}
+        <form action="{% url 'library' %}" method="POST">
+            {% csrf_token %}
+        <input type="hidden" name="id" value="{{library.id}}" />
+        <button class="btn btn-info" type="submit">Buy</button>
+        </form>
+    </div>
     {% endfor %}
-    </ul>
+    </section>
 {% endblock %}
  
