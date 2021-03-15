@@ -2,18 +2,30 @@
 
 {% block content %}
     <h1>Library</h1>
-    <p>There are {{count}} movies in stock.</p>
+    <h2>Available Film Titles</h2>
     <section class="library-container">
     {%for library in library %}
     <div>
-        {{library.title}} ({{library.director}}) ({{library.writer}}) ({{library.description}}) - Stock: {{library.stock}}
         <form action="{% url 'library' %}" method="POST">
             {% csrf_token %}
-        <input type="hidden" name="id" value="{{library.id}}" />
-        <button class="btn btn-info" type="submit">Buy</button>
+        <input type="hidden" name="id" value="{{library.id}}">
+        {{library.title}} ({{library.director}}) ({{library.writer}}) ({{library.description}})
+        <button class="btn-info" type="submit"><a href="https://www.imdb.com/title/tt2400098/?ref_=nv_sr_srsg_0" target="blank">Buy</a></button> 
         </form>
     </div>
     {% endfor %}
+    </section>
+    <section>
+    <div class="rect">
+        <ul class="ul">
+        <li>
+        <a href="https://www.imdb.com/title/tt2400098/?ref_=nv_sr_srsg_0" target="blank">400 Will Kill You! :)</a>
+        </li>
+        <li>
+        <a href="https://www.imdb.com/video/vi186425881?ref_=tt_pv_vi_aiv_1" target="blank">The Lowering Middle Class</a>
+        </li>
+        </ul>
+    </div>
     </section>
 {% endblock %}
  

@@ -31,7 +31,7 @@ def contact(request):
                 director=request.POST.get('director'),
                 writer=request.POST.get('writer'),
                 description=request.POST.get('description'),
-                price=5.99    
+                price=1.99    
             )
             contact.save()
         except e:

@@ -6,16 +6,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Heru Production</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Heru Productions</title>
+    <!link rel="stylesheet" href="{% static 'base/css/styles.css' %}"->
+    <link rel="stylesheet" href="{% static 'base/css/custom.css' %}" >
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="{% static 'base/css/styles.css' %}" />
+    <!link rel="stylesheet" href="{% static 'base/css/styles.css' %}"->
+    <link rel="stylesheet" href="{% static 'base/css/custom.css' %}" />
   </head>
 
   <body>
     {% block title %}
     <div>
-    <h1>Heru Productions</h1>
     </div>
     {% endblock %}
     {% endblock %}
@@ -40,24 +41,23 @@
 </div>
   </nav>
   </div>
-  
-  <img class="header-image" src="{% static 'base/img/herulogo.jpg' %}" width="250" height="250">
-  
-  <div>
-  <button type="button" class="btn btn-primary">Primary</button>
-  <button type="button" class="btn btn-secondary">Secondary</button>
-  <button type="button" class="btn btn-success">Success</button>
-  <button type="button" class="btn btn-info">Info</button>
-  <button type="button" class="btn btn-warning">Warning</button>
-  <button type="button" class="btn btn-danger">Danger</button>
-  <button type="button" class="btn btn-link">Link</button>
+  <section class="image">
+   <div class="square">
+  <img class="header-image" src="{% static 'base/img/herulogo.jpg' %}" width="250" height="200">
+  <div class="btn">
+  <button type="button" class="btn-primary"><a href="https://www.youtube.com/channel/UChOR-6eStcqtybuVzOBsgzQ" target="blank">YouTube</a></button>
+  <button type="button" class="btn-primary"><a href="https://twitter.com/heruproductions" target="blank">Twitter</a></button>
+  <button type="button" class="btn-primary"><a href="https://www.facebook.com/heruproductions/" target="blank">Facebook</a></button>
   </div>
 
   {% block bootstrap4_content %}
     {% block content %}
     {% endblock %}
-
-      <h2>Example heading<span class="badge badge-primary">New</span></h2>
+    <div class="title">
+      <span class="badge-primary">Property of Heru Productions, LLC. @</span>
+    </div>
     {% endblock %}
+    </div>
+    </section>
   </body>
 </html>

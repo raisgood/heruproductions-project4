@@ -1,0 +1,54 @@
+body {
+    text-align: center;
+}
+
+.header-image {
+    width: 250px;
+    border: 5px ridge brown;
+    margin: 10px 25px;
+    text-align: center;
+}
+
+.library-container {
+    margin: 20px 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    color: #fff8f8;
+    font-weight: 200;
+    font-family: initial;
+}
+
+.image {
+    text-align: center;
+}
+
+.base-header {
+    text-align: center;
+    font-size: 50px;
+    color: rgb(136, 131, 131);
+    font-weight: 200;
+    font-family: initial;
+}
+
+nav {
+    text-align: right;
+}
+
+.badge-primary {
+    color: rgba(122, 204, 184, 0.753);
+    flex: center;
+    font-weight: 200;
+    font-family: math;
+}
+
+#square1 {
+    height: 500px;
+    width: 500px;
+    background-color: #060606;
+    border-color: #e84545;
+}
