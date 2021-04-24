@@ -1,1 +1,1 @@
-web: gunicorn productioncompany.wsgi
+web: gunicorn heruproductions-project4.wsgi
