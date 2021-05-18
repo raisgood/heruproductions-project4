@@ -3,34 +3,34 @@
 {% block content %}
     <h1>Contact</h1>
     <h2><a href="#contactform">Join our Mailing List!</a></h2>
-  <!form action="{% url 'contact' %}" method="POST"->
-  <!{% csrf_token %}
-  <!div>
-    <!label>
-      <!Title:
-      <!input type="text" name="title" />
-    <!/label>
-  <!/div>
-  <!div>
-    <!label>
-      <!Director:
-      <!input type="text" name="director" />
-    <!/label>
-  <!/div>
-  <!div>
-    <!label>
-      <!Writer:
-      <!input type="text" name="writer" />
-    <!/label>
-  <!/div>
-  <!div>
-    <!label>
-      <!Description:
-      <!input type="text" name="description" />
-    <!/label>
-  <!/div>
-    <!button class="btn btn-primary" type="submit"><!Add Movie<!/button->
-  <!/form->
+  <form action="{% url 'contact' %}" method="POST"->
+  {% csrf_token %}
+  <div>
+    <label>
+      <Title:
+      <input type="text" name="title" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Director:
+      <input type="text" name="director" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Writer:
+      <input type="text" name="writer" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Description:
+      <input type="text" name="description" />
+    </label>
+  </div>
+    <button class="btn btn-primary" type="submit"><Add Movie</button>
+  </form>
   <div class="container">
   <form id="contactform" id="fs-frm" name="department-contact-form" accept-charset="utf-8" 
   action="https://formspree.io/f/moqpgpnr" method="post">
