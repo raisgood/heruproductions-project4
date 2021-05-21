@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Wish List!</h1>
+
+    <h2><a href="#formaction">Tell us the movie you would like us to make?</a></h2>
+   <p>{{error}}</p>
+  <form action="{% url 'wishlist' %}" id="formaction" method="POST">
+  {% csrf_token %}
+  <div>
+    <label>
+      Title:
+      <input type="text" name="title" value="{{library.title}}" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Director:
+      <input type="text" name="director" value="{{library.director}}" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Writer:
+      <input type="text" name="writer" value="{{library.writer}}" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Plot Description:
+      <input type="text" name="description" value="{{library.description}}" />
+    </label>
+  </div>
+  <div>
+    <button class="btn btn-primary" type="submit">Send</button>
+  </div>
+  </form>
+{% endblock %}
+

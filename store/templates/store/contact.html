@@ -3,46 +3,18 @@
 {% block content %}
     <h1>Contact</h1>
     <h2><a href="#contactform">Join our Mailing List!</a></h2>
-  <form action="{% url 'contact' %}" method="POST"->
-  {% csrf_token %}
-  <div>
-    <label>
-      Title:
-      <input type="text" name="title" />
-    </label>
-  </div>
-  <div>
-    <label>
-      Director:
-      <input type="text" name="director" />
-    </label>
-  </div>
-  <div>
-    <label>
-      Writer:
-      <input type="text" name="writer" />
-    </label>
-  </div>
-  <div>
-    <label>
-      Description:
-      <input type="text" name="description" />
-    </label>
-  </div>
-    <button class="btn btn-primary" type="submit"><Add Movie</button>
-  </form>
   <div class="container">
   <form id="contactform" id="fs-frm" name="department-contact-form" accept-charset="utf-8" 
-  action="https://formspree.io/f/moqpgpnr" method="post">
+  action="https://formspree.io/f/moqpgpnr" method="POST" value="{{library.stock}}" target="blank">
   <fieldset id="fs-frm-inputs">
     <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <input type="text" id="fname" name="firstname" placeholder="Your name.." value="{{library.stock}}">
 
     <label for="lname"><sp>Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <input type="text" id="lname" name="lastname" placeholder="Your last name.." value="{{library.stock}}">
 
     <label for="email-address">Email Address</label>
-    <input type="email" name="_replyto" id="email-address" placeholder="Type your email-address.." required="">
+    <input type="email" name="_replyto" id="email-address" placeholder="Type your email-address.." required="" value="{{library.stock}}">
 
     <label for="country">Country</label>
     <select id="country" name="country">
@@ -285,11 +257,12 @@
 
     <label for="subject">Subject</label>
     <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-    <input type="hidden" name="_subject" id="email-subject" value="Department Contact Form Submission">
+    <input type="hidden" name="_subject" id="email-subject" value="Department Contact Form Submission" value="{{library.stock}}">
 </fieldset>
-    <input type="submit" value="Send Message">
+    <input type="submit" value="Send Message" value="{{library.stock}}">
 
   </form>
 </div>
 {% endblock %}
+
 

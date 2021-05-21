@@ -3,18 +3,6 @@
 {% block content %}
     <h1>Library</h1>
     <h2>Available Film Titles</h2>
-    <section class="library-container">
-    {%for library in library %}
-    <div>
-        <form action="{% url 'library' %}" method="POST">
-            {% csrf_token %}
-        <input type="hidden" name="id" value="{{library.id}}">
-        {{library.title}} ({{library.director}}) ({{library.writer}}) ({{library.description}})
-        <button class="btn-info" type="submit"><a href="https://www.imdb.com/title/tt2400098/?ref_=nv_sr_srsg_0" target="blank">Buy</a></button> 
-        </form>
-    </div>
-    {% endfor %}
-    </section>
     <section>
     <div class="rect">
         <ul class="ul">
